@@ -1,6 +1,11 @@
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import PolynomialFeatures 
 
-a = pd.read_csv('/Users/digvijayghotane/Desktop/Projects/Temp-Predict/dataset.csv')
+a = pd.read_csv('/Users/digvijayghotane/Desktop/Projects/Temp-Predict/dataset.csv').dropna()
 
 #For year input where x is the year input between 1901 to 9999.
 while True:
@@ -30,5 +35,3 @@ while True:
 for i in range(0,117):
     if x == a.iloc[i][0]:
         print("\nThe maximum temperature in the year",x,"for",a.columns[y],"is",a.iloc[i][y])
-
-#For new years we follow a regression model.
